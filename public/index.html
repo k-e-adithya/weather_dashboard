@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="dashboard">
+        <div class="search-panel">
+          <div>
+            <p class="eyebrow">Open-Meteo forecast</p>
+            <h1>Weather Dashboard</h1>
+          </div>
+          <form id="search-form" class="search-form">
+            <label class="sr-only" for="city-input">City</label>
+            <input id="city-input" name="city" type="search" autocomplete="off" placeholder="Search city" required />
+            <button type="submit" aria-label="Search">
+              <span>Search</span>
+            </button>
+          </form>
+          <p id="status" class="status" role="status"></p>
+        </div>
+
+        <section class="weather-grid" aria-live="polite">
+          <article class="current-card">
+            <div>
+              <p class="eyebrow">Current weather</p>
+              <h2 id="location">Search a city</h2>
+              <p id="summary" class="summary">Conditions will appear here.</p>
+            </div>
+            <div class="temp-lockup">
+              <span id="temperature">--</span>
+              <span>&deg;C</span>
+            </div>
+            <div class="metrics">
+              <div>
+                <span>Feels</span>
+                <strong id="feels-like">--&deg;</strong>
+              </div>
+              <div>
+                <span>Humidity</span>
+                <strong id="humidity">--%</strong>
+              </div>
+              <div>
+                <span>Wind</span>
+                <strong id="wind">-- km/h</strong>
+              </div>
+            </div>
+          </article>
+
+          <aside id="history-panel" class="history-panel hidden">
+            <div class="panel-title">
+              <p class="eyebrow">MongoDB</p>
+              <h2>Previous searches</h2>
+            </div>
+            <div id="history-list" class="history-list"></div>
+          </aside>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <p class="eyebrow">Next 7 days</p>
+            <h2>Forecast</h2>
+          </div>
+          <div id="forecast" class="forecast-grid"></div>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

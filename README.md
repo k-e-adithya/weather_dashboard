@@ -74,6 +74,6 @@ npm.cmd install
 Start the development server:
 
 ```bash
-npm start
+npm.cmd start
 ```
 
